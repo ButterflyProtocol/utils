@@ -1,0 +1,5 @@
+lib
+node_modules
+npm-debug.log
+.node-version
+yarn-error.log

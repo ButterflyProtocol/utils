@@ -1,0 +1,19 @@
+{
+  "name": "@dwns/utils",
+  "version": "0.0.0",
+  "description": "Utility library for DwNS",
+  "license": "MIT",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "prepare": "coffee -o lib -c src"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffeescript": "^2.3.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
