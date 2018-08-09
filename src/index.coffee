@@ -23,7 +23,7 @@ Utils = {
   isBuffer: (buf) -> Buffer.isBuffer(buf)
 
   isHex: (str) ->
-    @isString(str) && str.match(/^0x([0-9a-fA-F]{2})+$/)?
+    @isString(str) && str.match(/^0x([0-9a-fA-F]{2})*$/)?
 
   isBufferArray: (bufarr) ->
     if @isArray(bufarr) && bufarr.length then bufarr.every(@isBuffer)

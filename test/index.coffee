@@ -78,6 +78,10 @@ describe 'Utils', ->
       result = Utils.isHex('0x010203')
       expect(result).to.be.true
 
+    it 'should return true for a valid hex string with only 0x', ->
+      result = Utils.isHex('0x')
+      expect(result).to.be.true
+
     it 'should return false if passed a buffer', ->
       result = Utils.isHex(Buffer.from('010203', 'hex'))
       expect(result).to.be.false
