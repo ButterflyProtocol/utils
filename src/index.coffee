@@ -26,20 +26,21 @@ Utils = {
     @isString(str) && str.match(/^0x([0-9a-fA-F]{2})*$/)?
 
   isBufferArray: (bufarr) ->
-    if @isArray(bufarr) && bufarr.length then bufarr.every(@isBuffer)
+    if @isArray(bufarr) then bufarr.every(@isBuffer)
     else false
 
   isHexArray: (hexarr) ->
-    if @isArray(hexarr) && hexarr.length then hexarr.every((hex) => @isHex(hex))
+    if @isArray(hexarr) then hexarr.every((hex) => @isHex(hex))
     else false
 
   detect: (val) ->
     if @isBuffer(val) then 'buffer'
     else if @isHex(val) then 'hex'
-    else if @isBufferArray(val) then 'bufferArray'
-    else if @isHexArray(val) then 'hexArray'
+    else if @isBufferArray(val) && val.length then 'bufferArray'
+    else if @isHexArray(val) && val.length then 'hexArray'
+    else if @isArray(val) && val.length then 'array'
+    else if @isArray(val) then 'emptyArray'
     else if @isString(val) then 'string'
-    else if @isArray(val) then 'array'
     else 'unknown'
 
   bufferToHex: (buf) ->
@@ -91,6 +92,7 @@ Utils = {
       when 'hex' then @hexToBuffer(val)
       when 'bufferArray' then @bufferArrayToBuffer(val)
       when 'hexArray' then @hexArrayToBuffer(val)
+      when 'array' then Buffer()
       else throw new TypeError('Unsupported Type')
 }
 

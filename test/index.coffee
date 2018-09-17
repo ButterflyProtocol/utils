@@ -138,8 +138,12 @@ describe 'Utils', ->
       expect(result).to.equal('string')
 
     it 'should return array if passed an array', ->
-      result = Utils.detect([])
+      result = Utils.detect([0])
       expect(result).to.equal('array')
+
+    it 'should return emptyArray if passed an empty array', ->
+      result = Utils.detect([])
+      expect(result).to.equal('emptyArray')
 
     it 'should return unknown if passed an unknown type', ->
       result = Utils.detect(1000)
