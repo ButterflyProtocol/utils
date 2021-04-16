@@ -1,0 +1,43 @@
+{
+  "name": "@butterflyprotocol/utils",
+  "version": "0.0.1",
+  "description": "Utilities for Butterfly Protocol",
+  "author": "Josh Robinson <josh@butterflyprotocol.io>",
+  "homepage": "https://github.com/ButterflyProtocol/utils#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ButterflyProtocol/utils.git"
+  },
+  "scripts": {
+    "test": "mocha --recursive ./test/**/*.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ButterflyProtocol/utils/issues"
+  },
+  "mocha": {
+    "require": "./test/setup.js"
+  },
+  "dependencies": {
+    "eth-sig-util": "^2.5.2",
+    "ethereum-bloom-filters": "^1.0.6",
+    "web3": "^1.3.5"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^3.0.0",
+    "mocha": "^8.3.2"
+  }
+}
